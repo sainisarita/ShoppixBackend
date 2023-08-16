@@ -6,7 +6,7 @@ const validation=require('../validation/dataValidation')
 const authenticateToken=require('../authentication/jwtAuth')
 
 router.get('/products', productController.getProducts);
-router.post('/add-product', validation.products,productController.addProduct);
+router.post('/add-product',productController.addProduct);
 router.put('/update-product/:productId',validation.products, productController.updateProduct);
 router.delete('/delete-product/:productId', productController.deleteProduct);
 
