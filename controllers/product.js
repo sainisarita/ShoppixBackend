@@ -17,11 +17,10 @@ exports.addProduct = async (req, res, next) => {
     if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() });
     }
-    const userId = req.user.user_id
+    const userId = req.user.user_id;
     const { title, price, description } = req.body;
-    const image = req.file.buffer;
-    console.log(image) 
-    console.log(req.body)
+    console.log(req.file,req.body)
+    const image = req.file.filename;
 
     if (!image) {
         return res.status(400).json({ error: 'Image is required' });

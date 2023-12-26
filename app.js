@@ -1,5 +1,6 @@
 const express = require("express");
 require("dotenv").config();
+const cors = require('cors');
 const multer = require('multer');
 const { dbConnect } = require("./config/database");
 const productRoutes=require('./routes/product');
@@ -11,8 +12,10 @@ const PORT = process.env.PORT || 4000;
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("./images"));
 app.use(express.json());
-app.use(multer().single('image')); // Add multer middleware here
+// app.use(multer().single('image')); // Add multer middleware here
+app.use(cors());
 
 
 

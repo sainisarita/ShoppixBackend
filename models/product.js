@@ -10,13 +10,16 @@ const productSchema=new Schema({
         required:true
     },
     image:{
-        type:Buffer,
+        type:String,
         required:true
-
     },
     description:{
         type:String,
-        required:true
+        
+    },
+    date:{
+        type:Date,
+        default:Date.now
     },
     userId:{
         type:Schema.Types.ObjectId,

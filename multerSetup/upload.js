@@ -1,5 +1,5 @@
 const multer = require('multer');
-
+// const image=require('../')
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     // Specify the directory where you want to store the uploaded files
@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     // Set the file name as the current timestamp plus the original file extension
     const timestamp = Date.now();
-    const fileExtension = file.originalname.split('.').pop();
+    const fileExtension = file.originalname
     cb(null, `${timestamp}.${fileExtension}`);
   }
 });
